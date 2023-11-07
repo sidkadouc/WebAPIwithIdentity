@@ -26,7 +26,7 @@ namespace WebClientWithAuthent.Controllers
             var parsed = JsonDocument.Parse(content);
             var formatted = JsonSerializer.Serialize(parsed, new JsonSerializerOptions { WriteIndented = true });
 
-            return View(formatted);
+            return View("Index", formatted);
         }
 
         public IActionResult Privacy()

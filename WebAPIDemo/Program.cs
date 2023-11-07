@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
+    .AddJwtBearer("Bearer", async options =>
     {
         options.Authority = "https://localhost:5001";
 
@@ -32,6 +33,8 @@ builder.Services.AddAuthorization(options =>
     {
         policy.RequireClaim("sub");
     });
+
+
 });
 
 var app = builder.Build();

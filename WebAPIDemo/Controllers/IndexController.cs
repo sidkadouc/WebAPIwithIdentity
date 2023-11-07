@@ -5,8 +5,9 @@ namespace WebAPIDemo.Controllers
 {
     public class IndexController : Controller
     {
-        [CustomAuthorizeAttribute()]
+       
         [Route("IdentityCheck")]
+        [Authorize("API1.Role1")]
         [HttpGet]
         public IActionResult IdentityCheck()
         {
