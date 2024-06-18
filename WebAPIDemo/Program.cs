@@ -26,7 +26,7 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("ApiCaller", policy =>
     {
-        policy.RequireClaim("scope", "api");
+        policy.RequireClaim("scope", "api1");
     });
 
     options.AddPolicy("RequireInteractiveUser", policy =>

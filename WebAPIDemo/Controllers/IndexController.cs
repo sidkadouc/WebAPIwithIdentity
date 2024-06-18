@@ -7,7 +7,7 @@ namespace WebAPIDemo.Controllers
     {
        
         [Route("IdentityCheck")]
-        [Authorize("API1.Role1")]
+        [Authorize("ApiCaller")]
         [HttpGet]
         public IActionResult IdentityCheck()
         {
